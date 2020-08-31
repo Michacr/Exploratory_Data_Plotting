@@ -1,7 +1,0 @@
-# PLOT 1 
-#Creating the first histogram
-hist(House1$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
-
-# Next step is to Save the file and close the device
-dev.copy(png, "plot1.png", width= 480, height=480)
-dev.off()
