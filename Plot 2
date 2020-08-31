@@ -1,0 +1,21 @@
+## PLOT 2
+library(ggplot2)
+
+## Remove incomplete observation
+House1 <- House1 [complete.cases(House1),] 
+dateTime <- setNames(dateTime, "DateTime") House1 <- House1,!(names(House1) %in% c("Date","Time")]
+
+## Add DateTime column
+House1 <- cbind(dateTime, House1)
+
+## Format dateTime Column
+House1$dateTime <- as.POSIXct(dateTime)
+
+## Mix Data and time col 
+
+dateTime <- paste(House1$Date, House1$Time)
+
+plot(House1$Global_active_power~House1$dateTime, ylab = "Global Active Power (kilowatts)", xlab = "", pch= ".", type="l")
+
+## Next step is to Save the file and close the device
+dev.copy(png, "plot2.png", width= 480, height=480) dev.off()
