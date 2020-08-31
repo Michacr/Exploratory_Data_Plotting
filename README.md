@@ -24,9 +24,9 @@ dev.off()
 # PLOT 2
 library(ggplot2)
 ## Remove incomplete observation
-House1 <- House1[complete.cases(House1),]
+House1 <- House1 complete.cases(House1),]
 dateTime <- setNames(dateTime, "DateTime")
-House1 <- House1[ ,!(names(House1) %in% c("Date","Time"))]
+House1 <- House1,!(names(House1) %in% c("Date","Time")]
 
 ## Add DateTime column
 House1 <- cbind(dateTime, House1)
